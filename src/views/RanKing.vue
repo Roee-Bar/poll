@@ -1,16 +1,20 @@
 <template>
     <div class="home">
        <router-link to="/">
-         <h1>View rankings</h1>
+         <h1 class="text-center">
+            View Rankings
+        </h1>
+         
        </router-link>
        <v-col
              cols="12"
              sm="6"
            ></v-col>
        </div>
-       <v-card v-if="dataLoaded === true" v-scroll.self="onScroll" max-height="400" class="overflow-y-auto">
-       <li v-for="item in data" :key="item.score">
-       #{{count++}} {{ item.name }}: {{ item.score }}
+       <v-card center elevation="7" loading outlined shaped
+        v-if="dataLoaded === true" v-scroll.self="onScroll" max-height="400" class="overflow-y-auto">
+       <li class="ma-3" v-for="item in data" :key="item.score">
+       #<v-chip color="purple" outlined small>{{count++}}</v-chip> {{ item.name }}: {{ item.score }}
            </li>
    </v-card>
    </template>

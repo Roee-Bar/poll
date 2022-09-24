@@ -1,7 +1,7 @@
 <template>
   <v-form @submit.prevent="send">
     <div class="home">
-     <h1>D&D quiz!</h1>
+     <h1 class="text-center">D&D quiz!</h1>
      <v-col
            cols="12"
            sm="6"
@@ -14,21 +14,23 @@
         clearable>
       </v-text-field>
     </v-form>
-    <v-btn  v-if="nametaken === false" @click="nametaken = true">
-      submit
+    <v-btn class="mx-3" color="purple" v-if="nametaken === false" @click="nametaken = true">
+       submit <v-icon left>mdi-plus</v-icon>
     </v-btn>
     <v-container
     class="px-0"
     fluid
+    
   >
-  <v-banner v-if="nametaken === true"
+  <v-banner class="mx-3" v-if="nametaken === true"
   elevation="1"
   outlined
   rounded
   color="purple"
->
-which of the following is a third level spell?
-</v-banner>
+  
+  >
+    <h2>Which of the following is a third level spell?</h2>
+  </v-banner>
 <v-col
            cols="12"
            sm="6"
@@ -53,14 +55,13 @@ which of the following is a third level spell?
         v-model="radioGroup1"
       ></v-radio>
     </v-radio-group>
-    <v-banner v-if="nametaken === true"
+    <v-banner class="mx-3" v-if="nametaken === true"
   elevation="1"
   outlined
   rounded
-  color="purple"
->
-From the following classes, who is the tallest?
-</v-banner>
+  color="purple">
+    <h2>From the following classes, who is the tallest?</h2>
+  </v-banner>
 <v-col
            cols="12"
            sm="6"
@@ -85,14 +86,13 @@ From the following classes, who is the tallest?
         v-model="radioGroup2"
       ></v-radio>
     </v-radio-group>
-    <v-banner v-if="nametaken === true"
+    <v-banner class="mx-3" v-if="nametaken === true"
   elevation="1"
   outlined
   rounded
-  color="purple"
->
-which weapon has the highest damage die?
-</v-banner>
+  color="purple">
+    <h2>Which weapon has the highest damage die?</h2>
+  </v-banner>
 <v-col
            cols="12"
            sm="6"
@@ -117,14 +117,13 @@ which weapon has the highest damage die?
         v-model="radioGroup3"
       ></v-radio>
     </v-radio-group>
-    <v-banner v-if="nametaken === true"
+    <v-banner class="mx-3" v-if="nametaken === true"
   elevation="1"
   outlined
   rounded
-  color="purple"
->
-from the following classes, who cant cast spells?
-</v-banner>
+  color="purple">
+    <h2>From the following classes, who cant cast spells?</h2>
+  </v-banner>
 <v-col
            cols="12"
            sm="6"
@@ -153,8 +152,8 @@ from the following classes, who cant cast spells?
            cols="12"
            sm="6"
          ></v-col>
-    <v-btn  v-if="nametaken === true" type="submit">
-      submit
+    <v-btn class="mx-3" color="purple" v-if="nametaken === true" type="submit">
+      submit <v-icon left>mdi-plus</v-icon>
     </v-btn>
   </v-container>
 </v-form>
@@ -208,4 +207,3 @@ from the following classes, who cant cast spells?
         
     });
     </script>
-    
